@@ -1,11 +1,25 @@
 const express = require('express');
+const mysql = require('mysql');
+const cors = require('cors');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+
+// Intializations
 const app = express();
+
+// Authenthication package
 
 // settings
 app.set('port', process.env.PORT || 3000);
 
 // middlewares
 app.use(express.json());
+app.use(cors());
+app.use(cookieParser());
+
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(bodyParser.json());
+
 
 //routes
 app.use('/api/solicitudes', require ('./routes/solicitudes.js'));
