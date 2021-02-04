@@ -1,9 +1,9 @@
 module.exports = {
 
   database: {
-    host: '',
-    user: '',
-    password: '',
-    database: '',
+    host: 'localhost',
+    user: 'root',
+    password: 'Ruzae$4568',
+    database: 'projectodonto',
   }
 };

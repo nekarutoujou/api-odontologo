@@ -2227,7 +2227,7 @@ c_status VARCHAR(100),
 PRIMARY KEY (c_id),
 FOREIGN KEY (c_tpid) REFERENCES tratamiento_paciente(tp_id) ON DELETE CASCADE,
 FOREIGN KEY (c_pid) REFERENCES paciente(p_id) ON DELETE CASCADE,
-FOREIGN KEY (c_did) REFERENCES doctor(d_id) ON DELETE CASCADE
+FOREIGN KEY (c_did) REFERENCES doctor(d_id)
 );
 
 ALTER TABLE cita AUTO_INCREMENT=7000;
@@ -2261,8 +2261,8 @@ f_total FLOAT,
 f_discharged FLOAT,
 f_topay FLOAT,
 PRIMARY KEY (f_id),
-FOREIGN KEY (f_tpid) REFERENCES tratamiento_paciente(tp_id),
-FOREIGN KEY (f_pid) REFERENCES paciente(p_id),
+FOREIGN KEY (f_tpid) REFERENCES tratamiento_paciente(tp_id) ON DELETE CASCADE,
+FOREIGN KEY (f_pid) REFERENCES paciente(p_id) ON DELETE CASCADE,
 FOREIGN KEY (f_did) REFERENCES doctor(d_id)
 );
 
